@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jackson.mapper.CategoryMapper">
+
+    <update id="updateCategory">
+        update category
+        <set>
+            <if test="name!=null and name!=''">
+                name like concat('%',#{name},'%'),
+            </if>
+            <if test="type!=null">
+                type = #{type},
+            </if>
+            <if test="sort!=null">
+                sort = #{sort}
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+    <select id="selectListCategory" resultType="com.jackson.entity.Category">
+        <where>
+            <if test="name!=null and name!=''">
+                name like concat('%',#{name},'%'),
+            </if>
+            <if test="type!=null">
+                type = #{type},
+            </if>
+        </where>
+        limit #{start}, #{pageSize}
+    </select>
+</mapper>

@@ -1,0 +1,54 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.jackson</groupId>
+  <artifactId>sky-take-out</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>Archetype - sky-take-out</name>
+  <url>http://maven.apache.org</url>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.2.3</version>
+    <relativePath/> <!-- lookup parent from repository -->
+  </parent>
+  <modules>
+    <module>sky-pojo</module>
+    <module>sky-common</module>
+    <module>sky-server</module>
+  </modules>
+  <properties>
+    <lombok.verson>1.18.30</lombok.verson>
+    <aliyun-oss.verson>3.15.1</aliyun-oss.verson>
+    <jaxb-api.verson>2.3.1</jaxb-api.verson>
+    <activation.verson>1.1.1</activation.verson>
+    <jaxb-runtime.verson>2.3.3</jaxb-runtime.verson>
+    <pagehelper.verson>5.3.2</pagehelper.verson>
+    <jjwt.verson>0.9.1</jjwt.verson>
+    <fastjson.verson>2.0.32</fastjson.verson>
+    <aop.verson>3.1.2</aop.verson>
+    <jackson-databind.verson>2.16.1</jackson-databind.verson>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok.verson}</version>
+    </dependency>
+  </dependencies>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>fastjson</artifactId>
+        <version>${fastjson.verson}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${jackson-databind.verson}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+</project>
